@@ -1,0 +1,26 @@
+[[rss]]
+enable = true
+name = "whatsnew"
+title = "AWS What's New"
+url = "https://aws.amazon.com/about-aws/whats-new/recent/feed/"
+translate = true
+max_entries=30
+max_items=15
+
+[[rss]]
+enable = true
+name = "cert"
+title = "AWS Training & Certification Update"
+url = "https://aws.amazon.com/blogs/training-and-certification/feed/"
+translate = true
+max_entries=30
+max_items=15
+
+[[rss]]
+enable = false
+name = "Security"
+title = "AWS Security Update"
+url = "https://aws.amazon.com/blogs/security/feed/"
+translate = true
+max_entries=30
+max_items=15

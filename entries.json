@@ -1,0 +1,8 @@
+[
+  {
+    "Time": "2024-11-20T01:23:45Z",
+    "Source": "test.awshealth",
+    "DetailType": "AWS Health Event",
+    "Detail": "{\"eventArn\":\"arn:aws:health:ap-northeast-1::event/EC2/AWS_EC2_MAINTENANCE_12345_test\",\"service\":\"EC2_test\",\"eventTypeCode\":\"AWS_EC2_MAINTENANCE_SCHEDULED_test\",\"eventTypeCategory\":\"scheduledChange\",\"startTime\":\"2024-11-21T01:00:00Z\",\"endTime\":\"2024-11-21T01:00:00Z\",\"lastUpdatedTime\":\"2024-11-20T01:00:00Z\",\"statusCode\":\"open\",\"eventScopeCode\":\"ACCOUNT_SPECIFIC\",\"eventDescription\":[{\"language\":\"en_US\",\"latestDescription\":\"We will perform scheduled maintenance on your EC2 instance.\"}],\"affectedEntities\":[{\"entityValue\":\"i-0abc123def456\",\"entityArn\":\"arn:aws:ec2:ap-northeast-1:123456789012:instance/i-0abc123def456\"}]}"
+  }
+]

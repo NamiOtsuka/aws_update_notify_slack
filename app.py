@@ -7,22 +7,36 @@ from aws_update_notify_slack.aws_update_notify_slack_stack import AwsUpdateNotif
 
 
 app = cdk.App()
-AwsUpdateNotifySlackStack(app, "AwsUpdateNotifySlackStack",
-    # If you don't specify 'env', this stack will be environment-agnostic.
-    # Account/Region-dependent features and context lookups will not work,
-    # but a single synthesized template can be deployed anywhere.
 
-    # Uncomment the next line to specialize this stack for the AWS Account
-    # and Region that are implied by the current CLI configuration.
+stage = app.node.try_get_context("stage") or "dev"
+conf_all = app.node.try_get_context("aws_update_notify")
+cfg = conf_all[stage]
 
-    #env=cdk.Environment(account=os.getenv('CDK_DEFAULT_ACCOUNT'), region=os.getenv('CDK_DEFAULT_REGION')),
+AwsUpdateNotifySlackStack(
+    app, 
+    "AwsUpdateNotifySlackTokyo",
+    stage=stage,
+    env=cdk.Environment(
+            account=cdk.Aws.ACCOUNT_ID,
+            region="ap-northeast-1",  # RSS & Tokyo Health
+        ),
+    cfg=cfg,
+    enable_rss_schedule=True,
+)
 
-    # Uncomment the next line if you know exactly what Account and Region you
-    # want to deploy the stack to. */
 
-    #env=cdk.Environment(account='123456789012', region='us-east-1'),
+# グローバルHealth用（Virginia）
+AwsUpdateNotifySlackStack(
+    app, 
+    "AwsUpdateNotifySlackVirginia",
+    stage=stage,
+    env=cdk.Environment(
+            account=cdk.Aws.ACCOUNT_ID,
+            region="us-east-1",  # Global Health
+        ),
+    cfg=cfg,
+    enable_rss_schedule=False,
+)
 
-    # For more information, see https://docs.aws.amazon.com/cdk/latest/guide/environments.html
-    )
 
 app.synth()

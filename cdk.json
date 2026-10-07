@@ -81,6 +81,25 @@
     "@aws-cdk/aws-elasticloadbalancingV2:albDualstackWithoutPublicIpv4SecurityGroupRulesDefault": true,
     "@aws-cdk/aws-iam:oidcRejectUnauthorizedConnections": true,
     "@aws-cdk/core:enableAdditionalMetadataCollection": true,
-    "@aws-cdk/aws-lambda:createNewPoliciesWithAddToRolePolicy": true
+    "@aws-cdk/aws-lambda:createNewPoliciesWithAddToRolePolicy": true,
+    "stage": "dev",
+    "aws_update_notify": {
+      "dev": {
+        "slack_webhook_url": "https://hooks.slack.com/triggers/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",
+        "common_s3_bucket": "aws-update-notify-654654395507",
+        "state_s3_key": "state/state.json",
+        "rss_toml_s3_key": "def/aws_rss_def.toml",
+        "dry_run": false,
+        "log_level": "DEBUG"
+      },
+      "prd": {
+        "slack_webhook_url": "https://hooks.slack.com/triggers/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",
+        "common_s3_bucket": "aws-update-notify-198329756629",
+        "state_s3_key": "state/state.json",
+        "rss_toml_s3_key": "def/aws_rss_def.toml",
+        "dry_run": false,
+        "log_level": "INFO"
+      }
+    }
   }
 }

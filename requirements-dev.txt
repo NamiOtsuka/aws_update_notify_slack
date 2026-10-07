@@ -1,1 +1,9 @@
-pytest==6.2.5
+aws-cdk-lib==2.181.1
+constructs>=10.0.0,<11.0.0
+
+feedparser
+requests
+
+pytest
+black
+isort
